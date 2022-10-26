@@ -20,18 +20,21 @@
     </thead>
     <tbody>
    
-     {{-- @foreach ($users as $user) --}}
+     @foreach ($users as $user)
           
     <tr>
         <th scope="row">{{$user->id}}</th>
         <td>{{$user->name}}</td>
         <td>{{$user->email}}</td>
-        <td>{{$user->address}}</td>
-        <td>{{$user->city}}</td>
+        <td>{{$user->address ? $user->address:'Sin datos' }}</td>
+        <td>{{$user->city ? $user->city:'Sin datos'}}</td>
         <td>
             <div class="d-flex">
               
-             <a href="">link</a>
+                <div class="mx-1">
+                    <button type="button" class="btn btn-primary" id="btnEditId" ><a class="text-light text-decoration-none" href="{{route('users.edit',$user->id)}}"><i class="icon-edit"></i></a></button>
+                  </div>
+                  <button type="button" class="btn btn-success" id="btnEditId" ><a class="text-light text-decoration-none" href="{{route('users.password')}}">Cambiar Clave</a></button>
                 
             </div>
                
@@ -39,7 +42,7 @@
             </div>
         </td>   
     </tr>
-    {{-- @endforeach --}}
+    @endforeach
    
     </tbody>
   </table>

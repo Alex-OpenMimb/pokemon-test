@@ -28,5 +28,33 @@ class UserController extends Controller
         }
      
     }
+    public function edit(User $user)
+    {  
+        try {
+
+            return view('user.edit',['user' => $user]);
+            
+
+        } catch (\Exception $e) {
+
+            $message = $e->getMessage();
+            return response()->json($message);
+        }
+     
+    }
+    public function getpassword(Request $request)
+    {  
+        try {
+
+            return view('user.password');
+            
+
+        } catch (\Exception $e) {
+
+            $message = $e->getMessage();
+            return response()->json($message);
+        }
+     
+    }
     
 }
