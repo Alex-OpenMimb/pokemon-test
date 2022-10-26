@@ -5,7 +5,7 @@
 <div class="container w-50">
     <h1>Cambiar Contraseña</h1>
 
-    <form action="" method="POST" id="form_password_update">
+    <form action="{{route('users.updatepassword',$user->id)}}" method="POST" id="form_password_update">
         @csrf 
         @method('put')
 
@@ -25,5 +25,24 @@
 
 </div>
 
+
+@section('js')
+
+@if (session('update') == 'ok')
+
+<script>
+
+Swal.fire('Contraseña actualizada con éxito').then(()=>{
     
+    window.location = "http://127.0.0.1:8000/users";
+})
+
+</script>
+
+@endif
+   
+@endsection
+  
+
+
 @endsection

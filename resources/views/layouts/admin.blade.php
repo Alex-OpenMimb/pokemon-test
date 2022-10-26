@@ -67,7 +67,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href=""
+                <a class="nav-link collapsed" href="{{route('users.index')}}"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="icon-torso"></i>
                     <span>Usuarios</span>
@@ -77,7 +77,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href=""
+                <a class="nav-link collapsed" href="{{route('pokemons.index')}}"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="icon-users"></i>
                     <span>Pokemon</span>

@@ -70,11 +70,11 @@ class UserController extends Controller
  
     }
 
-    public function getpassword(Request $request)
+    public function editpassword(User $user)
     {  
         try {
-
-            return view('user.password');
+        
+            return view('user.password',['user' => $user]);
             
 
         } catch (\Exception $e) {
@@ -83,6 +83,28 @@ class UserController extends Controller
             return response()->json($message);
         }
      
+    }
+
+    public function updatepassword(Request $request,User $user)
+    {
+
+        $request->validate([
+            'password' => 'bail|required|string|min:6',
+        ]);
+
+        try {
+            $user->password = bcrypt($request->password);
+            $user->save();
+            return redirect()->back()->with('update','ok');
+            
+        } catch (\Exception $e) {
+           
+            $message = $e->getMessage();
+            return redirect()->back()->with('error','Error: ha ocurrido un error'. $message); 
+        }
+
+
+
     }
     
 }

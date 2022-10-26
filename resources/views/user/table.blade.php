@@ -34,7 +34,7 @@
                 <div class="mx-1">
                     <button type="button" class="btn btn-primary" id="btnEditId" ><a class="text-light text-decoration-none" href="{{route('users.edit',$user->id)}}"><i class="icon-edit"></i></a></button>
                   </div>
-                  <button type="button" class="btn btn-success" id="btnEditId" ><a class="text-light text-decoration-none" href="{{route('users.password')}}">Cambiar Clave</a></button>
+                  <button type="button" class="btn btn-success" id="btnEditId" ><a class="text-light text-decoration-none" href="{{route('users.password',$user->id)}}">Cambiar Clave</a></button>
                 
             </div>
                
