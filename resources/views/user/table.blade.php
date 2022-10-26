@@ -23,7 +23,7 @@
      {{-- @foreach ($users as $user) --}}
           
     <tr>
-        <th scope="row">{{$item++}}</th>
+        <th scope="row">{{$user->id}}</th>
         <td>{{$user->name}}</td>
         <td>{{$user->email}}</td>
         <td>{{$user->address}}</td>

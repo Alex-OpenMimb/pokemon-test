@@ -18,7 +18,7 @@ class UserController extends Controller
             
             $users = User::all();
 
-            return view('user.table',['users'=> $users, 'item'=> 1]);
+            return view('user.table',['users'=> $users]);
             
 
         } catch (\Exception $e) {
