@@ -5,7 +5,7 @@
 <div class="container w-50">
     <h1> Editar Usuario</h1>
 
-    <form action="" method="POST" id="">
+    <form action="{{route('users.update',$user->id)}}" method="POST" id="">
         @csrf   
      
           @method('PUT')
@@ -21,7 +21,7 @@
           
         </div>
         
-          
+
         <div class="mb-3">
           <label for="emailId" class="form-label">Email</label>
           <input type="email" class="form-control" id="emailIdUser" aria-describedby="emailHelp" name="email" value="{{$user->email}}" >

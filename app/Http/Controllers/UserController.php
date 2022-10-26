@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class UserController extends Controller
         } catch (\Exception $e) {
 
             $message = $e->getMessage();
-            return response()->json($message);
+            return redirect()->back()->with('error','Error: ha ocurrido un error'. $message); 
+            // return response()->json($message);
         }
      
     }
@@ -38,10 +40,36 @@ class UserController extends Controller
         } catch (\Exception $e) {
 
             $message = $e->getMessage();
-            return response()->json($message);
+            return redirect()->back()->with('error','Error: ha ocurrido un error'. $message); 
+            // return response()->json($message);
         }
      
     }
+
+
+    public function update(UserRequest $request,User $user)
+    {
+        try {
+
+            $user->update([
+
+                'name'     => $request->name,
+                'email'    => $request->email,
+                'address'  => $request->address,
+                'city'     => $request->city,
+              
+            ]);
+
+            return redirect()->route('users.index');
+           
+        } catch (\Exception $e) {
+
+            $message = $e->getMessage();
+            return redirect()->back()->with('error','Error: ha ocurrido un error'. $message); 
+        }
+ 
+    }
+
     public function getpassword(Request $request)
     {  
         try {
