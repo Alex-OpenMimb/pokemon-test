@@ -15,8 +15,9 @@
     <thead>
       <tr>
         <th scope="col">Item</th>
-        <th scope="col">Acciones</th>
+        <th scope="col">Nombre</th>
         <th scope="col">Imágen</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -25,7 +26,7 @@
           
     <tr>
         <th scope="row">{{$pokemon->id}}</th>
-        <td>{{$pokemon->name}}</td>
+        <td>{{ucfirst($pokemon->name)}}</td>
         <td>
             <img src=" {{$pokemon->sprites->front_default}}" width="100"  alt="{{$pokemon->name}}">
            

@@ -24,7 +24,7 @@ class PokemonController extends Controller
         $pokemons=[];
      
 
-        for ($i=1; $i < 6 ; $i++) { 
+        for ($i=1; $i < 11 ; $i++) { 
 
             $response = self::conectApi($i);
             $pokemons[] = $response['response'];
@@ -40,10 +40,10 @@ class PokemonController extends Controller
         $arryApi = $response['response'];
 
         $pokemon = [
-            'name' =>   $arryApi->name,
-            'image' =>   $arryApi->sprites->front_default,
-            'height' =>   $arryApi->height,
-            'weight' =>   $arryApi->weight,
+            'name'      =>   ucfirst($arryApi->name),
+            'image'     =>   $arryApi->sprites->front_default,
+            'height'    =>   $arryApi->height,
+            'weight'    =>   $arryApi->weight,
             'abilities' =>   $arryApi->abilities[0]->ability->name,
         ];
 
