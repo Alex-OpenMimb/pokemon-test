@@ -34,6 +34,6 @@ Route::middleware(['auth'])->group( function() {
     Route::put('users/{user}',             [UserController::class, 'update'])->name('users.update');
     Route::get('pokemons',                   [PokemonController::class, 'index'])->name('pokemons.index');
     Route::get('pokemons/show/{id}',          [PokemonController::class, 'show'])->name('pokemons.show');
-    
+    Route::view('pokemon', 'pokemon.table')->name('pokemon.table');
     
 });

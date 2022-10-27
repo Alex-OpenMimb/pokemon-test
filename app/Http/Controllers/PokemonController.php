@@ -8,16 +8,26 @@ use Illuminate\Support\Collection;
 
 class PokemonController extends Controller
 {
+
+    public static function conectApi($i)
+    {
+        // $url_list = env('API_ENDPOINT');
+        $url_list = 'https://pokeapi.co/api/v2/pokemon/';
+        $header = ['Content-Type : application/json'];
+        $curl = HelperCurl::get("$url_list".$i,$header);
+
+        return $curl;
+    }
+
     public function index()
     {
         $pokemons=[];
-        $url_list = 'https://pokeapi.co/api/v2/pokemon/';
-        $header = ['Content-Type : application/json'];
+     
 
         for ($i=1; $i < 6 ; $i++) { 
 
-            $curl = HelperCurl::get("$url_list".$i,$header);
-            $pokemons[] = $curl['response'];
+            $response = self::conectApi($i);
+            $pokemons[] = $response['response'];
 
         };
    
@@ -26,12 +36,8 @@ class PokemonController extends Controller
 
     public function show($id)
     {
-        $url_list = 'https://pokeapi.co/api/v2/pokemon/';
-        $header = ['Content-Type : application/json'];
-
-        $curl = HelperCurl::get("$url_list".$id,$header);
-
-        $arryApi = $curl['response'];
+        $response = self::conectApi($id);
+        $arryApi = $response['response'];
 
         $pokemon = [
             'name' =>   $arryApi->name,

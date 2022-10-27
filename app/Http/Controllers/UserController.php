@@ -49,6 +49,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request,User $user)
     {
+        // return $request;
         try {
 
             $user->update([
@@ -56,6 +57,7 @@ class UserController extends Controller
                 'name'     => $request->name,
                 'email'    => $request->email,
                 'address'  => $request->address,
+                'birthdate'  => $request->birthdate,
                 'city'     => $request->city,
               
             ]);

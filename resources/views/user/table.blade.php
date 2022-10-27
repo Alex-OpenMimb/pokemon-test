@@ -12,6 +12,7 @@
       <tr>
         <th scope="col">Item</th>
         <th scope="col">Nombre</th>
+        <th scope="col">Fecha de nacimiento</th>
         <th scope="col">Correo</th>
         <th scope="col">dirección</th>
         <th scope="col">ciudad</th>
@@ -25,6 +26,7 @@
     <tr>
         <th scope="row">{{$user->id}}</th>
         <td>{{$user->name}}</td>
+        <td>{{$user->birthdate ? $user->birthdate:'Sin dato'}}</td>
         <td>{{$user->email}}</td>
         <td>{{$user->address ? $user->address:'Sin datos' }}</td>
         <td>{{$user->city ? $user->city:'Sin datos'}}</td>

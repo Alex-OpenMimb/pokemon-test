@@ -2,6 +2,10 @@
 
 @section('content')
 
+<div id="main-app">
+  {{-- <Pokemon/> --}}
+
+</div>
 <div class="container">
   <div class="d-flex justify-content-between">
     <h1>Pokémons</h1> 

@@ -20,6 +20,16 @@
          @enderror
           
         </div>
+
+        <div class="mb-3">
+          <label for="nameId" class="form-label">Fecha de nacimiento</label>
+          <input type="date" class="form-control" id="nameIdUser" aria-describedby="emailHelp" name="birthdate" value="">
+    
+         @error('birthdate')
+             <div id="" class="form-text">* {{$message}}</div>
+         @enderror
+          
+        </div>
         
 
         <div class="mb-3">

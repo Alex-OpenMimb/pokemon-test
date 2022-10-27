@@ -25,6 +25,7 @@
     <link href="{{asset('libs/sbadmin/css/sb-admin-2.min.css')}} " rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/fontello.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{asset('assets/img/logo.jpg')}}">
 </head>
 
 <body id="page-top">
@@ -324,7 +325,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid" >
 
                     @yield('content')
  
@@ -387,7 +388,8 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="{!! asset('js/helpers/index.js') !!}"></script>
+    <script src="/js/app.js"></script>
+    {{-- <script type="module" src="{!! asset('js/helpers/index.js') !!}"></script> --}}
     @yield('js')
     <script src="{{asset('libs/sbadmin/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('libs/sbadmin/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

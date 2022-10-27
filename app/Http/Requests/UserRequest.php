@@ -31,6 +31,7 @@ class UserRequest extends FormRequest
                     'name'              => ['bail','required','string', 'max:60', 'min:4'],
                     'email'             => ['bail','required','email', 'max:60'],
                     'address'           => 'bail|required|string|max:20',
+                    'birthdate'         => 'bail|date',
                     'city'              => 'bail|required|string|max:20',
                    
                 ];
